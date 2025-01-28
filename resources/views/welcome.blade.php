@@ -76,7 +76,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="https://via.placeholder.com/30" alt="Logo" class="me-2"> Foodpanda
+                <img src="https://placehold.co/50x50" class="me-2"> KHQRMenu
             </a>
             
             <span class="ms-auto">Select your address</span>
@@ -86,11 +86,11 @@
     <div class="container mt-4">
         <div class="row align-items-center menu-header">
             <div class="col-md-2">
-                <img src="https://via.placeholder.com/100" alt="Store Logo" class="img-fluid">
+                <img src="https://placehold.co/100x100" class="img-fluid">
             </div>
             <div class="col-md-6">
-                <h3 class="mb-0">Fresh Drinks (Store II)</h3>
-                <span class="discount-text">🔥 Special Discount $3.50</span>
+                <h1>KHQRMenu</h1>
+                <p>Scan QR Code to order food</p>
             </div>
         </div>
     </div>
