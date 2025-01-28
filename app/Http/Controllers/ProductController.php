@@ -44,7 +44,8 @@ class ProductController extends Controller
         $validatedData = $request->validate([
             'category_id' => 'nullable|integer',
             'name'        => 'required|string|max:255',
-            'photo'       => 'nullable|string', // If you're storing a photo path or URL
+            'photo'       => 'nullable|string', 
+            'code'       => 'nullable|string',// If you're storing a photo path or URL
             'cost_usd'        => 'nullable|numeric|min:0',
             'cost_khr'        => 'nullable|numeric|min:0',
             'description' => 'required|string',
@@ -89,7 +90,8 @@ class ProductController extends Controller
         $validatedData = $request->validate([
             'category_id' => 'nullable|integer',
             'name'        => 'required|string|max:255',
-            'photo'       => 'nullable|string', // If you're storing a photo path or URL
+            'photo'       => 'nullable|string',
+            'code'       => 'nullable|string', // If you're storing a photo path or URL
             'cost_usd'        => 'nullable|numeric|min:0',
             'cost_khr'        => 'nullable|numeric|min:0',
             'description' => 'required|string',

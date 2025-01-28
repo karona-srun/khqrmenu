@@ -55,6 +55,12 @@
                         </div>
                      </div>
                      <div class="form-group row">
+                        <label class="control-label col-sm-3 align-self-center mb-0" for="text">Code:</label>
+                        <div class="col-sm-9">
+                           <input type="text" class="form-control" id="text" name="code" value="{{ $product->code }}" placeholder="Enter your code">
+                        </div>
+                     </div>
+                     <div class="form-group row">
                         <label class="control-label col-sm-3 align-self-center mb-0" for="text">Category:</label>
                         <div class="col-sm-9">
                            <select name="category_id" id="user_id" class="form-control">

@@ -18,6 +18,7 @@ class Product extends Model
         'user_id',
         'name',
         'photo',
+        'code',
         'cost_khr',
         'cost_us',
         'description',
