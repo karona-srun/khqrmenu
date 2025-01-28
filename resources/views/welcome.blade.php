@@ -173,12 +173,78 @@
     </section>
 
     <!-- Pricing Section -->
-    <section class="pricing py-5 text-center">
+    <section class="pricing py-5">
         <div class="container">
-            <h2 class="mb-4">Simple no-tricks pricing</h2>
-            <p class="mb-5">We offer transparent and affordable pricing options for our digital menu, without any hidden fees or complicated contracts. Our goal is to provide a straightforward and cost-effective solution that meets the needs of your business.</p>
+            <h2 class="mb-4 text-center">Simple no-tricks pricing</h2>
+            <p class="mb-5 text-center">We offer transparent and affordable pricing options for our digital menu, without any hidden fees or complicated contracts.</p>
+            
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="card shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h3>Memberships</h3>
+                                    <p class="text-muted">Your company's digital menu, ready to go to work for you!</p>
+                                    
+                                    <div class="mt-4">
+                                        <h5 class="text-danger">What's included</h5>
+                                        <ul class="list-unstyled">
+                                            <li class="mb-2"><i class="bi bi-check text-danger me-2"></i>Unlimited Products</li>
+                                            <li class="mb-2"><i class="bi bi-check text-danger me-2"></i>Unlimited User Access</li>
+                                            <li class="mb-2"><i class="bi bi-check text-danger me-2"></i>Fast support response time</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 text-center">
+                                    <div class="p-4">
+                                        <p class="text-muted mb-2">The right price for you</p>
+                                        <h2 class="display-4 fw-bold mb-3">$40<span class="fs-6">/year</span></h2>
+                                        <a href="#" class="btn btn-danger w-100 mb-3">Get access</a>
+                                        <small class="text-muted">Invoiced and receipts available for easy company reimbursement</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
+
+    <!-- Contact Section -->
+    <section class="contact py-5">
+        <div class="container">
+            <div class="row">
+                <!-- <div class="col-md-5">
+                    <img src="https://cdn-icons-png.flaticon.com/512/5995/5995295.png" alt="Contact Us" class="img-fluid mb-4">
+                </div> -->
+                <div class="col-md-8 offset-md-2">
+                    <div class="bg-danger text-white p-5 rounded">
+                        <h2 class="mb-4">Looking for Personalized for your business?</h2>
+                        <p class="mb-4">We also specialize in creating customized QR Code Digital menus that align perfectly with your business guidelines and design preferences. With our expertise, we can ensure that your menu not only showcases your offerings but also reflects the unique branding of your business.</p>
+                        <a href="#" class="btn btn-light px-4">Let's get in touch</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-4 text-center">
+        <div class="container">
+            <div class="mb-3">
+                <a href="#" class="text-decoration-none mx-2"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="text-decoration-none mx-2"><i class="bi bi-messenger"></i></a>
+            </div>
+            <!-- <img src="logo.png" alt="Red.Box" class="mb-3" height="30"> -->
+            <p class="text-muted small">© 2025 KHQRMenu. All rights reserved.</p>
+            <div>
+                <a href="#" class="text-decoration-none text-muted small mx-2">Privacy policy</a>
+                <a href="#" class="text-decoration-none text-muted small mx-2">Terms & Conditions</a>
+            </div>
+        </div>
+    </footer>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>

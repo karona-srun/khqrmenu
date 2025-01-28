@@ -23,6 +23,8 @@ return new class extends Migration
             $table->string('instragram_link')->nullable();
             $table->string('telegram_link')->nullable();
             $table->string('facebook_link')->nullable();
+            $table->string('tiktok_link')->nullable();
+            $table->longText('google_map_link')->nullable();
             $table->timestamps();
         });
     }

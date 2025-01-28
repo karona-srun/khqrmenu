@@ -8,10 +8,6 @@ use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 
-// Route::get('/{any}', function () {
-//     return view('welcome'); // Replace 'app' with the name of your Vue app view.
-// })->where('any', '.*');
-
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
