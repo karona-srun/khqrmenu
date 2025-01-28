@@ -40,7 +40,7 @@
                         @foreach($category as $key => $item)
                            <tr>
                            <th>{{$item->name}}</th>
-                           <td>{{$item->store->name}}</td>
+                           <td>{{$item->store->name ?? 'N/A'}}</td>
                            <th>{{$item->description}}</th>
                            <th>{{$item->is_active ? 'Active' : 'Disabled'}}</th>
                               <td>
