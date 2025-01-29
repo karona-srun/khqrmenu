@@ -42,7 +42,7 @@
                         @foreach($product as $key => $item)
                            <tr>
                               <td>
-                                 <img src="{{ $item->photo != null ? asset($item->photo) : asset('assets/images/browser_file.png') }}" width="32" alt="" srcset="">
+                                 <img src="{{ $item->photo != null ? asset('storage/'.$item->photo) : asset('assets/images/browser_file.png') }}" width="32" alt="" srcset="">
                               </td>
                            <th>{{$item->name}}</th>
                            <td>{{$item->store->name ?? '' }}</td>

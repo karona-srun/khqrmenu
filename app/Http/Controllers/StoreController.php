@@ -50,12 +50,15 @@ class StoreController extends Controller
             'instragram_link' => 'nullable|string', // Fixed typo: 'instragram' to 'instagram'
             'telegram_link' => 'nullable|string',
             'facebook_link' => 'nullable|string',
+            'google_map_link' => 'nullable|string',
         ]);
         
         // Handle logo upload if provided
         if ($request->hasFile('logo')) {
             $validatedData['logo'] = $request->file('logo')->store('logo', 'public');
         }
+
+        $validatedData['slug'] = strtolower(str_replace(' ', '-', $validatedData['name']));
         
         // Create and save the store record
         $store = new Store();

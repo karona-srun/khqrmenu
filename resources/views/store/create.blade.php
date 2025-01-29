@@ -82,6 +82,12 @@
                         </div>
                      </div>
                      <div class="form-group row">
+                        <label class="control-label col-sm-3 align-self-center mb-0">Google Map  URL:</label>
+                        <div class="col-sm-9">
+                           <input type="text" class="form-control" id="text" name="google_map_link" value="{{ old('google_map_link') }}" placeholder="https://">
+                        </div>
+                     </div>
+                     <div class="form-group row">
                         <label class="control-label col-sm-3 align-self-center mb-0">Phone Number:</label>
                         <div class="col-sm-9">
                            <input type="text" class="form-control" id="text" name="phone_number" value="{{ old('phone_number') }}" placeholder="+85500000000">

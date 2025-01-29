@@ -12,12 +12,14 @@ class Store extends Model
         'name',
         'phone_number',
         'logo',
+        'slug',
         'location',
         'description',
         'is_active',
         'instragram_link',
         'telegram_link',
         'facebook_link',
+        'google_map_link',
     ];
     
     public function user(): BelongsTo

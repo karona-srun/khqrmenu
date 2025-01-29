@@ -22,7 +22,6 @@ return new class extends Migration
             $table->decimal('cost_usd',10,2)->nullable();
             $table->decimal('cost_khr',10,2)->nullable();
             $table->longText('description');
-
             $table->timestamps();
         });
     }

@@ -226,14 +226,13 @@
             <h4 class="section-heading mt-4 mb-4" id="{{ $category->name }}">{{ $category->name }}</h4>
             <div class="row">
             @foreach($category->products as $product)
-            <div class="col-md-4 col-sm-2 product-card my-3" data-product-name="{{ strtolower($product->name) }}" data-product-description="{{ strtolower($product->description) }}" data-product-photo="{{ $product->photo ? asset('storage/'.$product->photo) : 'https://via.placeholder.com/300x200' }}">
+            <div class="col-md-4 col-sm-2 product-card my-3" data-product-code="{{ $product->code }}" data-product-cost="{{ $product->cost_usd }}" data-product-description="{{ $product->description }}" data-product-name="{{ strtolower($product->name) }}" data-product-description="{{ strtolower($product->description) }}" data-product-photo="{{ $product->photo ? asset('storage/'.$product->photo) : 'https://via.placeholder.com/300x200' }}">
                 <div class="card" style="border: none; cursor: pointer;">
                     <img src="{{ $product->photo ?  asset('storage/'.$product->photo) : 'https://via.placeholder.com/300x200' }}" class="card-img-top" alt="{{ $product->name }}">
                     <div class="card-body text-center">
                         <h5 class="card-title">{{ $product->name }}</h5>
-                        <p class="card-text">{{$product->description}}</p>
+                        <p class="card-text">{{ Str::limit($product->description, 30) }}</p>
                         <span class="price">${{$product->cost_usd}}</span>
-                        <span class="price">{{$product->cost_khr}}៛</span>
                     </div>
                 </div>
             </div>
@@ -246,7 +245,7 @@
     <div class="container mt-4 mb-4">
         <div class="row">
             <div class="col-sm-12 text-center">
-                <p class="powered-by">Powered by <br> <a href="https://www.khqrmenu.com">KhQRMenu</a> <br> <small>DIGITAL MENU</small></p>
+                <p class="powered-by">Powered by <br> <a href="https://www.khqrmenu.com">KHQRMenu</a> <br> <small>DIGITAL MENU</small></p>
                 <p class="powered-by">© {{now()->year}} K2Digital. All rights reserved.</p>
             </div>
         </div>
@@ -277,6 +276,8 @@
                 let productPhoto = $(this).data('product-photo');
                 $('#modalImage').attr('src', productPhoto);
                 $('#imageModal').modal('show');
+                $('#productPrice').text('$'+$(this).data('product-cost'));
+                $('#productCode').text('#'+$(this).data('product-code'));
                 $('#productName').text($(this).data('product-name'));
                 $('#productDescription').text($(this).data('product-description'));
             });
@@ -292,20 +293,42 @@
                 </div>
                 <div class="modal-body">
                     <img id="modalImage" src="" class="img-fluid" alt="Product Image">
-                    <p class="text-start">{{ $store->name }}</p>
-                    <p class="text-start mt-1" id="productName"></p>
-                    <p class="text-start" id="productDescription"></p>
-                    <hr>
-                    <div class="row justify-content-center mt-2">
-                        <p class="col-sm-3 justify-content-center"> <a href="{{ $store->facebook_link }}" target="_blank"> <img src="{{ asset('assets/icons/facebook.png') }}" width="24" alt="" srcset="" class="me-2"> </a> </p>
-                        <p class="col-sm-3 justify-content-center"> <a href="{{ $store->telegram_link }}" target="_blank"> <img src="{{ asset('assets/icons/telegram.png') }}" width="24" alt="" srcset="" class="me-2"> </a> </p>
-                        <p class="col-sm-3"> <a href="{{ $store->instagram_link }}" target="_blank"> <img src="{{ asset('assets/icons/instagram.png') }}" width="24" alt="" srcset="" class="me-2"> </a> </p>
-                        <p class="col-sm-3"> <a href="{{ $store->google_map_link }}" target="_blank"> <img src="{{ asset('assets/icons/googlemaps.png') }}" width="24" alt="" srcset="" class="me-2"> </a> </p>
+                    <p class="text-start mt-2">{{ $store->name }}</p>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <p class="text-start" id="productName"></p>
+                        </div>
+                        <div class="col-sm-6 text-end">
+                            <span class="text-start p-1 px-2 bg-primary text-white" id="productCode" style="border-radius: 3px;"></span>
+                        </div>
+                        <div class="col-sm-12">
+                            <span class="text-start p-1 px-2 bg-danger text-white" id="productPrice" style="border-radius: 3px;"></span>
+                        </div>
                     </div>
+                    <p class="text-start text-wrap text-break bg-light p-2 mt-2" id="productDescription"></p>
+                    <div class="btn-group" role="group" aria-label="Third group">
+                        <a href="{{ $store->facebook_link }}" target="_blank" class="btn btn-light"> <img src="{{ asset('assets/icons/facebook.png') }}" width="24" alt="" srcset="" class="me-2"> </a> 
+                        <a href="{{ $store->telegram_link }}" target="_blank" class="btn btn-light"> <img src="{{ asset('assets/icons/telegram.png') }}" width="24" alt="" srcset="" class="me-2"> </a> 
+                        <a href="{{ $store->instagram_link }}" target="_blank" class="btn btn-light"> <img src="{{ asset('assets/icons/instagram.png') }}" width="24" alt="" srcset="" class="me-2"> </a> 
+                        <a href="{{ $store->google_map_link }}" target="_blank" class="btn btn-light"> <img src="{{ asset('assets/icons/googlemaps.png') }}" width="24" alt="" srcset="" class="me-2"> </a> 
+                        
+                    </div>
+                    <button onclick="copyCurrentURL()" class="btn btn-light" style="float: right;"> <img src="{{ asset('assets/icons/chain.png') }}" width="20" class="me-2"> Copy link</button>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- Add this JavaScript before the closing body tag -->
+    <script>
+        function copyCurrentURL() {
+            navigator.clipboard.writeText(window.location.href).then(function() {
+                alert('URL copied to clipboard!');
+            }).catch(function(err) {
+                console.error('Failed to copy URL: ', err);
+            });
+        }
+    </script>
 </body>
 
 </html>

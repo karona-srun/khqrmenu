@@ -100,7 +100,7 @@
                                   </div>
                               </div> -->
                               <!--logo End-->
-                              <h4 class="logo-title ms-3">KhQRMenu</h4>
+                              <h4 class="logo-title ms-3">KHQRMenu</h4>
                            </a>
                            <h2 class="mb-2 text-center">Sign In</h2>
                            <p class="text-center">Login to stay connected.</p>
@@ -136,9 +136,9 @@
                                           {{ __('Remember Me') }}
                                        </label>
                                     </div>
-                                    <a href="{{ route('password.request') }}">
+                                    <!-- <a href="{{ route('password.request') }}">
                                        {{ __('Forgot Your Password?') }}
-                                    </a>
+                                    </a> -->
                                  </div>
                               </div>
                               <div class="d-flex justify-content-center">

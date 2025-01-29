@@ -41,6 +41,7 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+        print_r($request->all());
         $validatedData = $request->validate([
             'category_id' => 'nullable|integer',
             'name'        => 'required|string|max:255',
@@ -52,7 +53,7 @@ class ProductController extends Controller
         ]);
 
         if ($request->hasFile('logo')) {
-            $validatedData['photo'] = $request->file('logo')->store('photo', 'public');
+            $validatedData['photo'] = $request->file('logo')->store('menu', 'public');
         }
     
         $validatedData['user_id'] = Auth::user()->id;
@@ -98,7 +99,7 @@ class ProductController extends Controller
         ]);
 
         if ($request->hasFile('logo')) {
-            $validatedData['photo'] = $request->file('logo')->store('photo', 'public');
+            $validatedData['photo'] = $request->file('logo')->store('menu', 'public');
         }
     
         $validatedData['user_id'] = Auth::user()->id;
