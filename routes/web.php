@@ -19,5 +19,4 @@ Route::resource('products', ProductController::class);
 Route::resource('users', UserController::class);
 
 Route::get('/{slug?}', [WelcomeController::class, 'index'])
-     ->where('slug', '^(?!login|register|password).*$')
      ->name('welcome.index');

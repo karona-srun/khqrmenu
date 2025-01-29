@@ -13,8 +13,7 @@ ENV REAL_IP_HEADER 1
 ENV APP_ENV production
 ENV APP_DEBUG false
 ENV LOG_CHANNEL stderr
-ENV APP_URL ${APP_URL}  # This will be set by Render
-ENV ASSET_URL ${ASSET_URL}  # This will be set by Render
+ENV APP_URL REAL_IP_HEADER 1
 
 # Allow composer to run as root
 ENV COMPOSER_ALLOW_SUPERUSER 1
