@@ -19,7 +19,7 @@ echo "Caching config..."
 cp .env.example .env
 
 echo "Running generate key..."
-php artisan key:generate
+php artisan key:generate --show
 
 echo "Running migrations..."
 php artisan migrate  --force
@@ -31,3 +31,6 @@ echo "Running storage link..."
 php artisan storage:link
 
 echo "Running Terminal is completed"
+
+echo "Publishing cloudinary provider..."
+php artisan vendor:publish --provider="CloudinaryLabs\CloudinaryLaravel\CloudinaryServiceProvider" --tag="cloudinary-laravel-config"
