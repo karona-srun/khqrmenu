@@ -95,7 +95,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
         <div class="container">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="{{ url('/login') }}">
                 <img src="https://placehold.co/50x50" alt="KHQRMenu" class="me-2" height="30"/> KHQRMenu
             </a>
         </div>
