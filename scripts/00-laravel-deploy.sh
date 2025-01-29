@@ -12,6 +12,9 @@ php artisan config:cache
 echo "Caching routes..."
 php artisan route:cache
 
+echo "Get routes..."
+php artisan route:list
+
 echo "Caching config..."
 cp .env.example .env
 
@@ -24,11 +27,7 @@ php artisan migrate  --force
 echo "Running seeder..."
 php artisan db:seed 
 
-echo "Running generate JWT..."
-php artisan jwt:secret
+echo "Running storage link..."
+php artisan storage:link
 
-echo "Running l5 Swagger generate..."
-php artisan l5-swagger:generate
-
-echo "Publishing cloudinary provider..."
-php artisan vendor:publish --provider="CloudinaryLabs\CloudinaryLaravel\CloudinaryServiceProvider" --tag="cloudinary-laravel-config"
+echo "Running Terminal is completed"
